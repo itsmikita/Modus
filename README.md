@@ -20,3 +20,9 @@ __0.2__
 * Fixed jQuery plugin placeholder so that now you can use `.close()` method as well
 * Added sample CSS
 * Added compressed version
+
+Future plans
+------------
+
+* Make it mobile optimized
+* Publish it on a CDN resource

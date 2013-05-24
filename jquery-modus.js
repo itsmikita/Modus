@@ -4,8 +4,7 @@
  * This is a reeeally lightweight jQuery modal window.
  *
  * Author: Mikita Stankiewicz
- * URL: http://designed.bymikita.com/juicy/
- * Version: 0.1
+ * Version: 0.2
  */
 ;( function( $, window, document, undefined ) {
 	/**
@@ -28,7 +27,7 @@
 			if( 0 == $( '#modus' ).length )
 				return;
 			
-			var that = this;
+			var self = this;
 			
 			$( window ).resize( function() {
 				$( '#modus .modus-window' ).css( {
@@ -37,13 +36,13 @@
 				} );
 			} ).trigger( 'resize' ).keydown( function( e ) {
 				if( 27 == e.keyCode )
-					that.close();
+					self.close();
 			} );
 			
 			$( '#modus .dismiss-modus, #modus.modus-overlay' ).click( function( e ) {
 				e.preventDefault();
 				
-				that.close();
+				self.close();
 			} );
 			
 			$( '#modus .modus-window' ).click( function( e ) {
@@ -83,5 +82,7 @@
 		
 		if( 'undefined' != typeof content )
 			m.open( content );
+		
+		return m;
 	};
 } )( jQuery, window, document );
